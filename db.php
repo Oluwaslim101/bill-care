@@ -1,21 +1,24 @@
 <?php
-if (!defined('FLW_SECRET_KEY')) {
-    define('FLW_SECRET_KEY', 'FLWSECK-e64fa04c69f8cc3af508862b529669cc-19742b447b3vt-X');
-}
 
-// Database credentials
-$host = 'localhost';         // Database host (e.g., localhost or an IP address)
-$dbname = 'u822915062_billpay';   // Your database name
-$username = 'u822915062_billpay';          // Database username
-$password = 'Lotanna@2024';              // Database password (change this to your actual password)
+<?ph
+// Load environment variables (with fallback for local dev)
+$host     = getenv('DB_HOST') ?: 'localhost';
+$dbname   = getenv('DB_NAME') ?: 'u822915062_billpay';
+$username = getenv('DB_USER') ?: 'u822915062_billpay';
+$password = getenv('DB_PASS') ?: 'Lotanna@2024';
 
-// Create PDO instance
 try {
-    $sql = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    // Set the PDO error mode to exception
+    $sql = new PDO(
+        "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
+        $username,
+        $password
+    );
+
+    // Set PDO error mode
     $sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 } catch (PDOException $e) {
-    // If connection fails, display error message
-    echo "Connection failed: " . $e->getMessage();
+    // Safer error handling (don’t expose full details in production)
+    die("Database connection failed.");
 }
 ?>
