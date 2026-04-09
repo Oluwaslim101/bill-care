@@ -1,0 +1,18 @@
+2025-05-04 17:57:52 | Sent to +2347076690090 | Ref: SCDBDEFE | Status: OK
+2025-05-04 18:05:55 | Deposit SMS sent to +2347076690090 | Ref: SC1891DD | Response: {"success":true,"response":{"request_id":"991809ca-fe8a-4106-baaa-a0b0313e3e82","status":"accepted","created_at":"2025-05-04T18:05:55.439141"}} | Error: 
+2025-05-04 18:08:19 | Deposit SMS sent to +2347076690090 | Ref: SC00485A | Response: {"success":true,"response":{"request_id":"5df663fa-73f2-4185-b248-99cc469f94e8","status":"accepted","created_at":"2025-05-04T18:08:19.382853"}} | Error: 
+2025-05-04 21:28:32 | Deposit SMS sent to +2347076690090 | Ref: SCE7D326 | Response: {"success":true,"response":{"request_id":"761b8f11-1fe0-495e-93dd-cf9e92557732","status":"accepted","created_at":"2025-05-04T21:28:32.457371"}} | Error: 
+2025-05-05 19:59:25 | Deposit SMS sent to +2347076690090 | Ref: SCB0058D | Response: {"success":true,"response":{"detail":{"code":"INVALID_ACCESS_TOKEN","message":"Invalid access token"}}} | Error: 
+2025-05-07 21:43:48 | Deposit SMS sent to +2347076690090 | Ref: SCD3593A | Response: {"success":true,"response":{"detail":{"code":"INVALID_ACCESS_TOKEN","message":"Invalid access token"}}} | Error: 
+2025-05-07 21:47:24 | Deposit SMS sent to +2347076690090 | Ref: SCA93FE3 | Response: {"success":true,"response":{"detail":{"code":"INVALID_ACCESS_TOKEN","message":"Invalid access token"}}} | Error: 
+2025-05-07 21:54:39 | Deposit SMS sent to +2347076690090 | Ref: SC211A38 | Response: {"success":true,"response":{"detail":{"code":"INVALID_ACCESS_TOKEN","message":"Invalid access token"}}} | Error: 
+2025-05-07 21:56:50 | Deposit SMS sent to +2347076690090 | Ref: SC52A1E2 | Response: {"success":true,"response":{"detail":{"code":"INVALID_ACCESS_TOKEN","message":"Invalid access token"}}} | Error: 
+2025-05-07 21:57:59 | Deposit SMS sent to +2347076690090 | Ref: SCABBB6E | Response: {"success":true,"response":{"detail":{"code":"INVALID_ACCESS_TOKEN","message":"Invalid access token"}}} | Error: 
+2025-05-08 00:06:42 | Deposit SMS sent to +2347076690090 | Ref: SCF26DCB | Response: {"success":true,"response":{"detail":{"code":"INVALID_ACCESS_TOKEN","message":"Invalid access token"}}} | Error: 
+2025-05-08 16:26:45 | Deposit SMS sent to +2347076690090 | Ref: SC7AF66B | Response: {"success":true,"response":{"detail":{"code":"INVALID_ACCESS_TOKEN","message":"Invalid access token"}}} | Error: 
+2025-05-08 16:28:56 | Deposit SMS sent to +2347076690090 | Ref: SCCFFAB2 | Response: {"success":true,"response":{"detail":{"code":"INVALID_ACCESS_TOKEN","message":"Invalid access token"}}} | Error: 
+2025-05-08 16:40:40 | SMS sent to +2347076690090 | Ref: SCE0C5E3 | Response: {"success":true,"response":{"detail":{"code":"INVALID_ACCESS_TOKEN","message":"Invalid access token"}}} | Error: 
+2025-05-09 01:11:06 | SMS sent to +2347076690090 | Ref: SCF42739 | Response: {"success":true,"response":{"detail":{"code":"INVALID_ACCESS_TOKEN","message":"Invalid access token"}}} | Error: 
+2025-05-11 23:40:28 | SMS sent to +2347076690090 | Ref: SC004DE6 | Response: {"success":true,"response":{"detail":{"code":"INVALID_ACCESS_TOKEN","message":"Invalid access token"}}} | Error: 
+2025-05-22 11:30:59 | SMS sent to +2347076690090 | Ref: SCCD0484 | Response: {"success":true,"response":{"detail":{"code":"INVALID_ACCESS_TOKEN","message":"Invalid access token"}}} | Error: 
+2025-06-01 21:30:49 | SMS sent to +2347076690090 | Ref: SC2AC5A3 | Response: {"success":true,"response":{"detail":{"code":"INVALID_ACCESS_TOKEN","message":"Invalid access token"}}} | Error: 
