@@ -765,11 +765,18 @@ font-weight: bold;
       <div id="verifyStatus" class="mt-2 text-muted small"></div>
     </div>
   </div>
-</div><script>
+</div>
+    
+    <script>
+// ===============================
+// Withdrawal JS - Fully Optimized
+// ===============================
+
 let pinAttempts = 0;
 const MAX_ATTEMPTS = 4;
 let bankList = [];
 let faceVerified = false;
+let nameMatch = false; // track account verification
 
 document.addEventListener('DOMContentLoaded', () => {
   loadBanks();
@@ -777,68 +784,78 @@ document.addEventListener('DOMContentLoaded', () => {
   attachEventListeners();
 
   // Start with Withdraw button disabled
-  document.getElementById('withdrawBtn').disabled = true;
+  $('#withdrawBtn').prop('disabled', true);
 });
 
+// -------------------------------
+// Load Banks
+// -------------------------------
 function loadBanks() {
   fetch('get_banks.php')
     .then(res => res.json())
     .then(data => {
-      const select = document.getElementById('withdraw_bank_select');
-      select.innerHTML = '<option value="">Select Bank</option>';
+      const select = $('#withdraw_bank_select');
+      select.empty().append('<option value="">Select Bank</option>');
       bankList = data.data || [];
       bankList.forEach(bank => {
-        const opt = new Option(bank.name, bank.code);
-        opt.dataset.bankName = bank.name;
-        select.appendChild(opt);
+        select.append(new Option(bank.name, bank.code, false, false));
+        select.find('option:last').data('bankName', bank.name);
       });
     });
 }
 
+// -------------------------------
+// Load Saved Beneficiaries
+// -------------------------------
 function loadBeneficiaries() {
   fetch('get_beneficiaries.php')
     .then(res => res.json())
     .then(data => {
-      const select = document.getElementById('beneficiarySelect');
+      const select = $('#beneficiarySelect');
       data.forEach(b => {
-        const opt = new Option(`${b.account_name} - ${b.account_number} (${b.bank_name})`, `${b.account_number}|${b.bank_code}`);
-        opt.dataset.bankName = b.bank_name;
-        opt.dataset.accountName = b.account_name;
-        select.appendChild(opt);
+        const opt = new Option(
+          `${b.account_name} - ${b.account_number} (${b.bank_name})`,
+          `${b.account_number}|${b.bank_code}`
+        );
+        $(opt).data('bankName', b.bank_name);
+        $(opt).data('accountName', b.account_name);
+        select.append(opt);
       });
     });
 }
 
+// -------------------------------
+// Attach Event Listeners
+// -------------------------------
 function attachEventListeners() {
-  const amountInput = document.getElementById('withdraw_amount');
-  const withdrawBtn = document.getElementById('withdrawBtn');
-  const amountError = document.getElementById('amountError');
-  const userBalance = parseFloat(document.getElementById('user_balance').value);
+  const amountInput = $('#withdraw_amount');
+  const withdrawBtn = $('#withdrawBtn');
+  const amountError = $('#amountError');
+  const userBalance = parseFloat($('#user_balance').val());
 
-  amountInput.addEventListener('input', () => {
-    const enteredAmount = parseFloat(amountInput.value);
-    if (enteredAmount > 0 && enteredAmount <= userBalance) {
-      withdrawBtn.disabled = false;
-      amountError.classList.add('d-none');
+  // Validate Amount
+  amountInput.on('input', () => {
+    const amount = parseFloat(amountInput.val());
+    if (amount > 0 && amount <= userBalance) {
+      amountError.addClass('d-none');
+      if (nameMatch) withdrawBtn.prop('disabled', false);
     } else {
-      withdrawBtn.disabled = true;
-      if (enteredAmount > userBalance) {
-        amountError.textContent = 'Insufficient balance';
-        amountError.classList.remove('d-none');
-      } else {
-        amountError.classList.add('d-none');
-      }
+      withdrawBtn.prop('disabled', true);
+      amountError.text(amount > userBalance ? 'Insufficient balance' : '').toggleClass('d-none', amount <= userBalance);
     }
   });
 
-  document.getElementById('withdraw_bank_select').addEventListener('change', e => {
-    const selected = e.target.selectedOptions[0];
-    document.getElementById('withdraw_bank_name').value = selected.dataset.bankName || '';
-    document.getElementById('bank_code').value = selected.value;
+  // Bank select change
+  $('#withdraw_bank_select').on('change', function() {
+    const selected = $(this).find('option:selected');
+    $('#withdraw_bank_name').val(selected.data('bankName') || '');
+    $('#bank_code').val($(this).val());
+    verifyAccountName();
   });
 
-  document.getElementById('beneficiarySelect').addEventListener('change', e => {
-    const [acct, code] = e.target.value.split('|');
+  // Beneficiary select change
+  $('#beneficiarySelect').on('change', function() {
+    const [acct, code] = $(this).val().split('|');
     const bank = bankList.find(b => b.code === code);
     if (bank) {
       $('#account_number').val(acct);
@@ -849,46 +866,64 @@ function attachEventListeners() {
     }
   });
 
-  ['account_number', 'withdraw_bank_select'].forEach(id => {
-    document.getElementById(id).addEventListener('blur', verifyAccountName);
-    document.getElementById(id).addEventListener('change', verifyAccountName);
+  // Account number blur/change
+  $('#account_number').on('blur change', verifyAccountName);
+
+  // Withdraw click
+  $('#withdrawBtn').on('click', () => {
+    if (!nameMatch) {
+      alert("Please verify the account before proceeding.");
+      return;
+    }
+    showPinModal();
   });
 
-  document.getElementById('withdrawBtn').addEventListener('click', showPinModal);
-  document.getElementById('submitPinBtn').addEventListener('click', handlePinSubmit);
+  // PIN submit
+  $('#submitPinBtn').on('click', handlePinSubmit);
+
+  // Withdraw Form submit
   $('#withdrawForm').submit(handleFormSubmit);
 
-  document.getElementById('captureBtn').addEventListener('click', captureSelfie);
+  // Capture selfie
+  $('#captureBtn').on('click', captureSelfie);
 }
 
+// -------------------------------
+// Verify Account Name (Paystack)
+// -------------------------------
 function verifyAccountName() {
-  const acct = $('#account_number').val();
-  const bank = $('#bank_code').val();
-  const expectedName = $('#user_name').val().trim().toLowerCase();
+  const acct = $('#account_number').val().trim();
+  const bank = $('#bank_code').val().trim();
 
-  if (acct.length !== 10 || !bank) return;
+  if (acct.length !== 10 || !bank) {
+    nameMatch = false;
+    $('#withdrawBtn').prop('disabled', true);
+    return;
+  }
 
   $('#resolvedName').text("Verifying...").css('color', 'gray');
 
   $.get('verify_account.php', { account_number: acct, bank_code: bank }, res => {
     if (res.status && res.data?.account_name) {
-      const resolved = res.data.account_name.trim().toLowerCase();
       $('#resolvedName').text("Account Name: " + res.data.account_name).css('color', 'green');
-nameMatch = true; // Always treat as verified
-      
+      nameMatch = true;
+      if (parseFloat($('#withdraw_amount').val()) > 0) $('#withdrawBtn').prop('disabled', false);
     } else {
-      nameMatch = false;
       $('#resolvedName').text("⚠ Could not verify account").css('color', 'red');
+      nameMatch = false;
+      $('#withdrawBtn').prop('disabled', true);
     }
-  }, 'json');
+  }, 'json').fail(() => {
+    $('#resolvedName').text("⚠ Verification failed").css('color', 'red');
+    nameMatch = false;
+    $('#withdrawBtn').prop('disabled', true);
+  });
 }
 
+// -------------------------------
+// Show PIN Modal
+// -------------------------------
 function showPinModal() {
-  //if (!nameMatch) {
-    //alert("Please verify account name before proceeding.");
-    //return;
-  //}
-
   const amount = parseFloat($('#withdraw_amount').val());
   const balance = parseFloat($('#user_balance').val());
   if (isNaN(amount) || amount > balance) {
@@ -907,6 +942,9 @@ function showPinModal() {
   new bootstrap.Modal(document.getElementById('confirmPinSheet')).show();
 }
 
+// -------------------------------
+// Handle PIN Submit
+// -------------------------------
 function handlePinSubmit() {
   const pin = $('#pinInput').val().trim();
   if (!/^\d{4}$/.test(pin)) {
@@ -914,45 +952,37 @@ function handlePinSubmit() {
     return;
   }
 
-$.post('verify_pin.php', { pin }, res => {
-  if (res.success) {
-    // ✅ PIN correct — submit
-    $('#hidden_withdraw_pin').val(pin);
-    bootstrap.Modal.getInstance(document.getElementById('confirmPinSheet')).hide();
-    $('#withdrawForm').submit();
+  $.post('verify_pin.php', { pin }, res => {
+    if (res.success) {
+      $('#hidden_withdraw_pin').val(pin);
+      bootstrap.Modal.getInstance(document.getElementById('confirmPinSheet')).hide();
+      $('#withdrawForm').submit();
 
-  } else if (res.locked && !res.retry_after) {
-    // 🔒 Fully locked - support required
-    $('#pinInput').hide();
-    $('#submitPinBtn').hide();
-    $('#pinErrorMsg').text(res.message || "Your Withdrawal Action has been locked out.").show();
+    } else if (res.locked) {
+      const msg = res.retry_after ? `Too many attempts. Try again in ${Math.ceil(res.retry_after / 60)} minutes.` : (res.message || "Your withdrawal has been locked.");
+      $('#pinErrorMsg').text(msg).show();
+      if (!res.retry_after) $('#pinInput, #submitPinBtn').hide();
 
-  } else if (res.locked && res.retry_after) {
-    // ⏳ Cooldown lock (e.g. 30 mins)
-    const mins = Math.ceil(res.retry_after / 60);
-    $('#pinErrorMsg').text(`Too many attempts. Try again in ${mins} minutes.`).show();
+    } else if (res.face_required) {
+      pinAttempts = MAX_ATTEMPTS;
+      bootstrap.Modal.getInstance(document.getElementById('confirmPinSheet')).hide();
+      startCamera();
+      $('#faceVerifyModal').modal('show');
 
-  } else if (res.face_required) {
-    // 😐 Trigger facial verification
-    pinAttempts = MAX_ATTEMPTS; // force lock visual
-    bootstrap.Modal.getInstance(document.getElementById('confirmPinSheet')).hide();
-    startCamera();
-    $('#faceVerifyModal').modal('show');
-
-  } else {
-    // ❌ Wrong PIN
-    pinAttempts++;
-    const left = MAX_ATTEMPTS - pinAttempts;
-    $('#pinErrorMsg').text(res.message || `Incorrect PIN. ${left} attempt${left === 1 ? '' : 's'} left.`).show();
-    $('#pinInput').val('').focus();
-  }
-}, 'json');
-
+    } else {
+      pinAttempts++;
+      const left = MAX_ATTEMPTS - pinAttempts;
+      $('#pinErrorMsg').text(res.message || `Incorrect PIN. ${left} attempt${left === 1 ? '' : 's'} left.`).show();
+      $('#pinInput').val('').focus();
+    }
+  }, 'json');
 }
 
+// -------------------------------
+// Handle Form Submit
+// -------------------------------
 function handleFormSubmit(e) {
   e.preventDefault();
- 
   const btn = $('#withdrawBtn');
   btn.prop('disabled', true).text('Processing...');
 
@@ -962,9 +992,8 @@ function handleFormSubmit(e) {
     if (res.success) {
       $('#toast-success').addClass('show');
       $('#withdrawModal').modal('hide');
-      setTimeout(() => {
-        window.location.href = 'withdrawal_receipt.php?reference=' + encodeURIComponent(res.reference);
-      }, 1000);
+      setTimeout(() => window.location.href = `withdrawal_receipt.php?reference=${encodeURIComponent(res.reference)}`, 1000);
+
     } else {
       $('#toast-failure .toast-body').text(res.message);
       $('#toast-failure').addClass('show');
@@ -978,15 +1007,14 @@ function handleFormSubmit(e) {
   });
 }
 
+// -------------------------------
+// Facial Verification
+// -------------------------------
 function startCamera() {
   const video = document.getElementById('video');
   navigator.mediaDevices.getUserMedia({ video: true })
-    .then(stream => {
-      video.srcObject = stream;
-    })
-    .catch(() => {
-      $('#verifyStatus').text("Camera permission denied.").css('color', 'red');
-    });
+    .then(stream => video.srcObject = stream)
+    .catch(() => $('#verifyStatus').text("Camera permission denied.").css('color', 'red'));
 }
 
 function captureSelfie() {
@@ -999,7 +1027,7 @@ function captureSelfie() {
 
   $('#verifyStatus').text("Verifying...").css('color', 'gray');
 
-  $.post('withdrawal_face_verify.php', { selfie_image: imageData }, function(response) {
+  $.post('withdrawal_face_verify.php', { selfie_image: imageData }, response => {
     if (response.status === 'success') {
       $('#verifyStatus').text("✅ Face Verified").css('color', 'green');
       faceVerified = true;
@@ -1008,8 +1036,7 @@ function captureSelfie() {
         $('#confirmPinSheet').modal('show');
       }, 1200);
     } else {
-      const msg = response.message || "❌ Face mismatch. Contact support or retry.";
-      $('#verifyStatus').text(msg).css('color', 'red');
+      $('#verifyStatus').text(response.message || "❌ Face mismatch. Contact support or retry.").css('color', 'red');
     }
   }, 'json');
 }
