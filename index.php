@@ -90,7 +90,7 @@ $slides = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#000000">
-    <title>DtheHub</title>
+    <title>BillCare</title>
     <meta name="description" content="DtheHub FinTech Wallet">
     <meta name="keywords"
         content="bootstrap, wallet, banking, fintech mobile template, cordova, phonegap, mobile, html, responsive" />
@@ -618,25 +618,29 @@ font-weight: bold;
 <!-- ✅ Hidden Balance -->
 <input type="hidden" id="user_balance" value="<?= htmlspecialchars($user['balance']) ?>">
 
-<!-- ✅ Withdraw Modal -->
-<div class="modal fade action-sheet" id="withdrawModal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="action-sheet-content">
+<!-- ✅ Withdraw Bottom Sheet Modal -->
+<div class="modal fade" id="withdrawModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-bottom modal-dialog-centered">
+    <div class="modal-content rounded-top">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Withdraw Funds</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
         <form id="withdrawForm">
 
           <!-- Beneficiary -->
-          <div class="form-group">
-            <label>Choose Saved Beneficiary</label>
-            <select id="beneficiarySelect" class="form-control">
+          <div class="mb-3">
+            <label class="form-label">Choose Saved Beneficiary</label>
+            <select id="beneficiarySelect" class="form-select">
               <option value="">-- Select --</option>
             </select>
           </div>
 
           <!-- Bank Select -->
-          <div class="form-group">
-            <label>Select Bank</label>
-            <select id="withdraw_bank_select" class="form-control" required>
+          <div class="mb-3">
+            <label class="form-label">Select Bank</label>
+            <select id="withdraw_bank_select" class="form-select" required>
               <option value="">Loading banks...</option>
             </select>
           </div>
@@ -646,93 +650,98 @@ font-weight: bold;
           <input type="hidden" name="withdraw_bank_code" id="bank_code">
 
           <!-- Account Number -->
-          <div class="form-group">
-            <label>Account Number</label>
+          <div class="mb-3">
+            <label class="form-label">Account Number</label>
             <input type="number" name="withdraw_account_number" id="account_number" class="form-control" required />
             <div id="resolvedName" class="small text-muted mt-1"></div>
           </div>
 
-           <!-- Amount -->
-            <div class="form-group">
-              <label>Amount (₦)</label>
-             <input type="number" name="withdraw_amount" id="withdraw_amount" class="form-control" required />
-             <small id="amountError" class="text-danger d-none">Insufficient balance</small>
-            </div>
-
+          <!-- Amount -->
+          <div class="mb-3">
+            <label class="form-label">Amount (₦)</label>
+            <input type="number" name="withdraw_amount" id="withdraw_amount" class="form-control" required />
+            <small id="amountError" class="text-danger d-none">Insufficient balance</small>
+          </div>
 
           <!-- Save Beneficiary -->
-          <div class="form-check mt-2">
+          <div class="form-check mb-3">
             <input type="checkbox" class="form-check-input" id="save_beneficiary" name="save_beneficiary" value="yes">
             <label class="form-check-label" for="save_beneficiary">Save as Beneficiary</label>
           </div>
-          
-    <style>
-  .withdrawal-toggle {
-    margin: 12px 0;
-    display: flex;
-    flex-direction: column;
-  }
 
-  .withdrawal-toggle label {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #333;
-  }
-
-  .withdrawal-toggle select {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: #f9f9f9 url("data:image/svg+xml;utf8,<svg fill='%23333' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
-    background-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px 40px 10px 12px;
-    font-size: 15px;
-    color: #444;
-    cursor: pointer;
-    transition: border 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .withdrawal-toggle select:focus {
-    outline: none;
-    border: 1px solid #4CAF50;
-    box-shadow: 0 0 6px rgba(76, 175, 80, 0.3);
-    background-color: #fff;
-  }
-</style>
-
-<div class="withdrawal-toggle">
-  <label for="withdrawal_mode">Withdrawal Mode</label>
-  <select id="withdrawal_mode" name="withdrawal_mode">
-    <option value="paystack">💳 Paystack Balance</option>
-    <option value="direct">⚡ Direct Credit</option>
-  </select>
-</div>
+          <!-- Withdrawal Mode -->
+          <div class="mb-3">
+            <label class="form-label">Withdrawal Mode</label>
+            <select id="withdrawal_mode" name="withdrawal_mode" class="form-select">
+              <option value="paystack">💳 Paystack Balance</option>
+              <option value="direct">⚡ Direct Credit</option>
+            </select>
+          </div>
 
           <!-- Hidden PIN -->
           <input type="hidden" name="pin" id="hidden_withdraw_pin">
 
           <!-- Withdraw Button -->
-          <button id="withdrawBtn" type="button" class="btn btn-primary w-100 mt-3">Withdraw</button>
+          <button id="withdrawBtn" type="button" class="btn btn-primary w-100 mt-2">Withdraw</button>
         </form>
       </div>
     </div>
   </div>
 </div>
 
+<style>
+/* Modern bottom sheet modal */
+.modal-bottom .modal-dialog {
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 480px;
+  pointer-events: auto;
+}
 
-<!-- PIN Confirmation Modal -->
-<div class="modal fade action-sheet" id="confirmPinSheet" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="action-sheet-content">
+.modal-bottom .modal-content {
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+  animation: slideUp 0.3s ease-out;
+}
 
-        <h5 class="text-center mt-2 mb-3">Confirm Transfer</h5>
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
 
+/* Optional: smooth scroll for content */
+.modal-body {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+/* Rounded form controls */
+.form-control, .form-select {
+  border-radius: 10px;
+}
+
+/* Slight shadow for Withdraw button */
+#withdrawBtn {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-weight: 600;
+}
+</style>
+
+
+<!-- ✅ PIN Confirmation Bottom Sheet -->
+<div class="modal fade" id="confirmPinSheet" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-bottom modal-dialog-centered">
+    <div class="modal-content rounded-top">
+      <div class="modal-header border-0">
+        <h5 class="modal-title w-100 text-center">Confirm Transfer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
         <!-- Summary -->
-        <div class="mb-2">
+        <div class="mb-3">
           <p><strong>Bank:</strong> <span id="summaryBank"></span></p>
           <p><strong>Account Name:</strong> <span id="summaryAcctName"></span></p>
           <p><strong>Account Number:</strong> <span id="summaryAcctNumber"></span></p>
@@ -740,19 +749,57 @@ font-weight: bold;
         </div>
 
         <hr>
-        <p class="text-muted small text-center">Enter your 4-digit PIN</p>
-        <div class="form-group">
-          <input type="password" id="pinInput" class="form-control text-center" maxlength="4" inputmode="numeric" placeholder="••••" autocomplete="off" />
+
+        <p class="text-muted small text-center mb-2">Enter your 4-digit PIN</p>
+        <div class="mb-3">
+          <input type="password" id="pinInput" class="form-control text-center fs-5" maxlength="4" inputmode="numeric" placeholder="••••" autocomplete="off">
         </div>
 
-        <button class="btn btn-primary w-100 mt-2" id="submitPinBtn">Submit Transfer</button>
+        <button class="btn btn-primary w-100 py-2 fw-semibold" id="submitPinBtn">Submit Transfer</button>
         <p class="text-danger small text-center mt-2" id="pinErrorMsg" style="display:none;"></p>
-
       </div>
     </div>
   </div>
 </div>
 
+<style>
+/* Bottom sheet modal for PIN */
+.modal-bottom .modal-dialog {
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 480px;
+}
+
+.modal-bottom .modal-content {
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-body {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+#pinInput {
+  border-radius: 12px;
+  padding: 12px;
+  letter-spacing: 0.3em;
+}
+
+#submitPinBtn {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-weight: 600;
+}
+</style>
 
 <!-- 📸 Face Verification Modal -->
 <div class="modal fade" id="faceVerifyModal" tabindex="-1">
