@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Online Mart Modal</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#0d7ff2",
+        "background-light": "#f5f7f8",
+        "background-dark": "#101922"
+      },
+      fontFamily: {
+        "display": ["Plus Jakarta Sans", "sans-serif"]
+      }
+    }
+  }
+}
+</script>
+
+<style>
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style>
+
+</head>
+
+<body class="bg-background-light dark:bg-background-dark">
+
+<div id="onlineMartModal" class="fixed inset-0 z-50 bg-background-light dark:bg-background-dark flex flex-col">
+
+  <!-- HEADER -->
+  <header class="flex items-center px-4 py-3 border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-background-dark sticky top-0 z-10">
+
+    <h1 class="flex-1 text-center font-bold text-lg text-[#111418] dark:text-white">
+      Online Mart
+    </h1>
+
+    <!-- THIS IS THE WORKING CLOSE BUTTON -->
+    <button onclick="closeModal()" class="p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full transition-colors">
+      <span class="material-symbols-outlined text-xl">close</span>
+    </button>
+
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 overflow-y-auto pb-24">
+
+    <!-- BANNER -->
+    <div class="px-4 py-4">
+
+      <div class="relative w-full h-44 rounded-2xl overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-700 shadow-lg shadow-primary/20">
+
+        <div class="absolute inset-0 bg-cover bg-center opacity-40"
+          style='background-image: url("https://images.pexels.com/photos/5632397/pexels-photo-5632397.jpeg");'>
+        </div>
+
+        <div class="relative h-full flex flex-col justify-center p-6 text-white">
+          <span class="bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold w-fit mb-2">
+            Limited Time Offer
+          </span>
+
+          <h3 class="text-2xl font-extrabold mb-1">Hot Deals</h3>
+          <p class="text-blue-100 text-sm">Up to 40% off selected items</p>
+
+          <button class="mt-4 bg-white text-primary px-5 py-2 rounded-lg text-sm font-bold w-fit">
+            Shop Now
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- CATEGORIES -->
+    <div class="px-4">
+
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-bold">Categories</h3>
+        <button class="text-primary text-sm font-bold">View All</button>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3">
+
+        <!-- Grocery -->
+        <div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-800 rounded-xl border">
+          <div class="size-14 flex items-center justify-center bg-green-50 rounded-lg">
+            <span class="material-symbols-outlined text-green-600">grocery</span>
+          </div>
+          <span class="text-xs font-semibold">Groceries</span>
+        </div>
+
+        <!-- Electronics -->
+        <div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-800 rounded-xl border">
+          <div class="size-14 flex items-center justify-center bg-blue-50 rounded-lg">
+            <span class="material-symbols-outlined text-blue-600">devices</span>
+          </div>
+          <span class="text-xs font-semibold">Electronics</span>
+        </div>
+
+        <!-- Fashion -->
+        <div class="flex flex-col items-center gap-2 p-3 bg-white dark:bg-gray-800 rounded-xl border">
+          <div class="size-14 flex items-center justify-center bg-pink-50 rounded-lg">
+            <span class="material-symbols-outlined text-pink-600">checkroom</span>
+          </div>
+          <span class="text-xs font-semibold">Fashion</span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- TRENDING PRODUCTS -->
+    <div class="mt-8 px-4">
+
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-bold">Trending Products</h3>
+        <button class="text-primary text-sm font-bold">See More</button>
+      </div>
+
+      <div class="flex gap-4 overflow-x-auto hide-scrollbar pb-4">
+
+        <!-- PRODUCT CARD -->
+        <div class="flex-none w-40 bg-white dark:bg-gray-800 rounded-xl border">
+
+          <div class="h-28 w-full bg-cover bg-center"
+            style='background-image: url("https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg");'>
+          </div>
+
+          <div class="p-3">
+            <p class="text-xs text-gray-500">Electronics</p>
+            <h4 class="text-sm font-bold truncate">Wireless Headset</h4>
+
+            <div class="mt-2 flex items-center justify-between">
+              <p class="text-primary font-bold">₦45,000</p>
+
+              <button class="h-7 w-7 flex items-center justify-center bg-primary text-white rounded-full">
+                <span class="material-symbols-outlined text-[16px]">add</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- BOTTOM NAV -->
+  <nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark border-t px-6 py-3 flex items-center justify-between">
+
+    <div class="flex flex-col items-center gap-1">
+      <span class="material-symbols-outlined text-gray-400">home</span>
+      <span class="text-[10px]">Home</span>
+    </div>
+
+    <div class="flex flex-col items-center gap-1">
+      <span class="material-symbols-outlined text-primary">grid_view</span>
+      <span class="text-[10px] text-primary font-bold">Market</span>
+    </div>
+
+    <div class="flex flex-col items-center gap-1">
+      <span class="material-symbols-outlined text-gray-400">shopping_cart</span>
+      <span class="text-[10px]">Cart</span>
+    </div>
+
+    <div class="flex flex-col items-center gap-1">
+      <span class="material-symbols-outlined text-gray-400">person</span>
+      <span class="text-[10px]">Profile</span>
+    </div>
+
+  </nav>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,390 @@
+2025-06-08 19:05:01 - New Order: A5C0976E - Input: Array
+(
+    [reference] => INV1749409500510
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => Vested Hoodie
+                    [price] => 100.00
+                    [description] => Very fast processor and generative output
+                    [image] => https://yentownhub.space/storage/stores/emmy/1-8-600x600.jpg
+                    [shop_id] => 2
+                    [quantity] => 3
+                )
+
+        )
+
+    [address] => Yenagoa
+    [paymentMethod] => full
+    [deliveryFee] => 100
+    [payAmount] => 400
+    [fullAmount] => 400
+    [status] => pending
+    [shop_id] => 2
+)
+
+2025-06-08 23:18:16 - New Order: DF501B5F - Input: Array
+(
+    [reference] => INV1749424695525
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => HP Elitebook
+                    [price] => 895000.00
+                    [description] => Very fast processor and generative output
+                    [image] => https://yentownhub.space/storage/d43249fe-7d05-42bb-b9ef-03f922518d96-600x600.jpg
+                    [shop_id] => 2
+                    [quantity] => 1
+                )
+
+        )
+
+    [address] => T
+    [paymentMethod] => full
+    [deliveryFee] => 100
+    [payAmount] => 895100
+    [fullAmount] => 895100
+    [status] => pending
+    [shop_id] => 2
+)
+
+2025-06-09 12:40:33 - New Order: 7C7B688C - Input: Array
+(
+    [reference] => INV1749472832587
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => HP Elitebook
+                    [price] => 895000.00
+                    [description] => Very fast processor and generative output
+                    [image] => https://yentownhub.space/storage/d43249fe-7d05-42bb-b9ef-03f922518d96-600x600.jpg
+                    [shop_id] => 2
+                    [quantity] => 1
+                )
+
+        )
+
+    [address] => OlYe
+    [paymentMethod] => full
+    [deliveryFee] => 100
+    [payAmount] => 895100
+    [fullAmount] => 895100
+    [status] => pending
+    [shop_id] => 2
+)
+
+2025-06-10 17:03:33 - New Order: 7BAFE6C7 - Input: Array
+(
+    [reference] => INV1749575012779
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => Vested Hoodie
+                    [price] => 100.00
+                    [description] => Very fast processor and generative output
+                    [image] => https://yentownhub.space/storage/stores/emmy/1-8-600x600.jpg
+                    [shop_id] => 2
+                    [quantity] => 1
+                )
+
+        )
+
+    [address] => Abia
+    [paymentMethod] => full
+    [deliveryFee] => 100
+    [payAmount] => 200
+    [fullAmount] => 200
+    [status] => pending
+    [shop_id] => 2
+)
+
+2025-06-11 15:49:00 - New Order: 7E8E17EF - Input: Array
+(
+    [reference] => INV1749656939107
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => HP Elitebook
+                    [price] => 895000.00
+                    [description] => Very fast processor and generative output
+                    [image] => https://yentownhub.space/storage/d43249fe-7d05-42bb-b9ef-03f922518d96-600x600.jpg
+                    [shop_id] => 2
+                    [quantity] => 2
+                )
+
+        )
+
+    [address] => Tebs
+    [paymentMethod] => full
+    [deliveryFee] => 100
+    [payAmount] => 1790100
+    [fullAmount] => 1790100
+    [status] => pending
+    [shop_id] => 2
+)
+
+2025-06-24 22:26:51 - New Order: F8724D4E - Input: Array
+(
+    [reference] => INV1750804010397
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => Samsung Smart TV HD
+                    [price] => 472999.00
+                    [description] => Quality Ultra Slim high grade Tv
+                    [image] => https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPmZWtLsmDu_3N7-O8Wy7wCQJnWhzkYuRhUwmbg6iZYzEIu5Y10OXlH_A&s=10
+                    [shop_id] => 3
+                    [quantity] => 1
+                )
+
+        )
+
+    [address] => Yrb
+    [paymentMethod] => half
+    [deliveryFee] => 100
+    [payAmount] => 236549.5
+    [fullAmount] => 473099
+    [status] => pending
+    [shop_id] => 3
+)
+
+2025-06-26 16:26:39 - New Order: D0EA5F26 - Input: Array
+(
+    [reference] => INV1750955199013
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => Samsung Smart TV HD
+                    [price] => 472999.00
+                    [description] => Quality Ultra Slim high grade Tv
+                    [image] => https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPmZWtLsmDu_3N7-O8Wy7wCQJnWhzkYuRhUwmbg6iZYzEIu5Y10OXlH_A&s=10
+                    [shop_id] => 3
+                    [quantity] => 1
+                )
+
+        )
+
+    [address] => Yen
+    [paymentMethod] => full
+    [deliveryFee] => 100
+    [payAmount] => 473099
+    [fullAmount] => 473099
+    [status] => pending
+    [shop_id] => 3
+)
+
+2025-06-28 15:42:46 - New Order: FFC8455B - Input: Array
+(
+    [reference] => INV1751125364928
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => Vested Hoodie
+                    [price] => 100.00
+                    [description] => Very fast processor and generative output
+                    [image] => https://yentownhub.space/storage/stores/emmy/1-8-600x600.jpg
+                    [shop_id] => 2
+                    [quantity] => 4
+                )
+
+        )
+
+    [address] => Aba
+    [paymentMethod] => full
+    [deliveryFee] => 100
+    [payAmount] => 500
+    [fullAmount] => 500
+    [status] => pending
+    [shop_id] => 2
+)
+
+2025-06-28 15:43:22 - New Order: 8C2C63F3 - Input: Array
+(
+    [reference] => INV1751125402078
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => Vested Hoodie
+                    [price] => 100.00
+                    [description] => Very fast processor and generative output
+                    [image] => https://yentownhub.space/storage/stores/emmy/1-8-600x600.jpg
+                    [shop_id] => 2
+                    [quantity] => 1
+                )
+
+        )
+
+    [address] => Login
+    [paymentMethod] => half
+    [deliveryFee] => 100
+    [payAmount] => 100
+    [fullAmount] => 200
+    [status] => pending
+    [shop_id] => 2
+)
+
+2025-07-05 11:10:32 - New Order: B76B09E8 - Input: Array
+(
+    [reference] => INV1751713826788
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => HP Elitebook
+                    [price] => 895000.00
+                    [description] => Very fast processor and generative output
+                    [image] => https://yentownhub.space/storage/d43249fe-7d05-42bb-b9ef-03f922518d96-600x600.jpg
+                    [shop_id] => 2
+                    [quantity] => 1
+                )
+
+        )
+
+    [address] => uyeh
+    [paymentMethod] => full
+    [deliveryFee] => 100
+    [payAmount] => 895100
+    [fullAmount] => 895100
+    [status] => pending
+    [shop_id] => 2
+)
+
+2025-07-05 11:17:50 - New Order: 7A20E367 - Input: Array
+(
+    [reference] => INV1751714265116
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => Vested Hoodie
+                    [price] => 100.00
+                    [description] => Very fast processor and generative output
+                    [image] => https://yentownhub.space/storage/stores/emmy/1-8-600x600.jpg
+                    [shop_id] => 2
+                    [quantity] => 1
+                )
+
+        )
+
+    [address] => rwg
+    [paymentMethod] => full
+    [deliveryFee] => 100
+    [payAmount] => 200
+    [fullAmount] => 200
+    [status] => pending
+    [shop_id] => 2
+)
+
+2025-07-05 11:18:34 - New Order: CEFA52F0 - Input: Array
+(
+    [reference] => INV1751714308685
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => Vested Hoodie
+                    [price] => 100.00
+                    [description] => Very fast processor and generative output
+                    [image] => https://yentownhub.space/storage/stores/emmy/1-8-600x600.jpg
+                    [shop_id] => 2
+                    [quantity] => 1
+                )
+
+        )
+
+    [address] => eq
+    [paymentMethod] => full
+    [deliveryFee] => 100
+    [payAmount] => 200
+    [fullAmount] => 200
+    [status] => pending
+    [shop_id] => 2
+)
+
+2025-07-05 11:31:10 - New Order: 99474AD5 - Input: Array
+(
+    [reference] => INV1751715065808
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => Samsung iPad 2025
+                    [price] => 263200.00
+                    [description] => Enjoy Samsung Galaxy iPad 12th Gen with WiFi, Tabular Keyboard
+                    [image] => https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwvQW1eKK_1pgNB5QJOFfuxOh8KVkxZ7hFj_oqjfd_7Qm2_1zKkiRY2v15&s=10
+                    [shop_id] => 2
+                    [quantity] => 1
+                )
+
+        )
+
+    [address] => tyjrd
+    [paymentMethod] => full
+    [deliveryFee] => 100
+    [payAmount] => 263300
+    [fullAmount] => 263300
+    [status] => pending
+    [shop_id] => 2
+)
+
+2025-07-05 11:32:08 - New Order: 67FA3199 - Input: Array
+(
+    [reference] => INV1751715123392
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => HP Elitebook
+                    [price] => 895000.00
+                    [description] => Very fast processor and generative output
+                    [image] => https://yentownhub.space/storage/d43249fe-7d05-42bb-b9ef-03f922518d96-600x600.jpg
+                    [shop_id] => 2
+                    [quantity] => 1
+                )
+
+        )
+
+    [address] => srsr
+    [paymentMethod] => full
+    [deliveryFee] => 100
+    [payAmount] => 895100
+    [fullAmount] => 895100
+    [status] => pending
+    [shop_id] => 2
+)
+
+2025-07-05 11:33:05 - New Order: 8E8D5B13 - Input: Array
+(
+    [reference] => INV1751715180569
+    [cart] => Array
+        (
+            [0] => Array
+                (
+                    [name] => Oraimo Headset
+                    [price] => 28500.00
+                    [description] => We are a digital agency that specializes in leveraging businesses and brands digitally. Our goal is to offer services like website development, SMS ads, email marketing, and graphic design to enhance businesses
+                    [image] => https://yentownhub.space/storage/4-600x600.jpg
+                    [shop_id] => 2
+                    [quantity] => 1
+                )
+
+        )
+
+    [address] => dzrth
+    [paymentMethod] => full
+    [deliveryFee] => 100
+    [payAmount] => 28600
+    [fullAmount] => 28600
+    [status] => pending
+    [shop_id] => 2
+)
+

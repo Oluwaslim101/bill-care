@@ -1,0 +1,209 @@
+{
+  "countries": [
+    {
+      "country": "United States",
+      "gift_cards": [
+        {
+          "name": "Amazon Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/amazon.svg",
+          "rate": "10$ = 8 USD"
+        },
+        {
+          "name": "iTunes Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/itunes.svg",
+          "rate": "10$ = 8 USD"
+        },
+        {
+          "name": "Google Play Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/google-play.svg",
+          "rate": "10$ = 8.5 USD"
+        },
+        {
+          "name": "Steam Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/steam.svg",
+          "rate": "10$ = 8 USD"
+        }
+      ]
+    },
+    {
+      "country": "Canada",
+      "gift_cards": [
+        {
+          "name": "Amazon Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/amazon.svg",
+          "rate": "10$ = 9.5 CAD"
+        },
+        {
+          "name": "Spotify Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/spotify.svg",
+          "rate": "10$ = 12 CAD"
+        },
+        {
+          "name": "Visa Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/visa.svg",
+          "rate": "10$ = 9.8 CAD"
+        }
+      ]
+    },
+    {
+      "country": "United Kingdom",
+      "gift_cards": [
+        {
+          "name": "Amazon UK Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/amazon.svg",
+          "rate": "10$ = 7 GBP"
+        },
+        {
+          "name": "PlayStation Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/playstation.svg",
+          "rate": "10$ = 7.5 GBP"
+        },
+        {
+          "name": "Google Play UK Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/google-play.svg",
+          "rate": "10$ = 7 GBP"
+        }
+      ]
+    },
+    {
+      "country": "Australia",
+      "gift_cards": [
+        {
+          "name": "Amazon AU Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/amazon.svg",
+          "rate": "10$ = 14 AUD"
+        },
+        {
+          "name": "Apple Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/apple.svg",
+          "rate": "10$ = 14.5 AUD"
+        },
+        {
+          "name": "Steam Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/steam.svg",
+          "rate": "10$ = 13 AUD"
+        }
+      ]
+    },
+    {
+      "country": "Germany",
+      "gift_cards": [
+        {
+          "name": "Amazon DE Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/amazon.svg",
+          "rate": "10$ = 8 EUR"
+        },
+        {
+          "name": "Google Play DE Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/google-play.svg",
+          "rate": "10$ = 8.5 EUR"
+        }
+      ]
+    },
+    {
+      "country": "France",
+      "gift_cards": [
+        {
+          "name": "Amazon FR Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/amazon.svg",
+          "rate": "10$ = 8 EUR"
+        },
+        {
+          "name": "iTunes FR Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/itunes.svg",
+          "rate": "10$ = 8.5 EUR"
+        }
+      ]
+    },
+    {
+      "country": "Nigeria",
+      "gift_cards": [
+        {
+          "name": "Amazon Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/amazon.svg",
+          "rate": "10$ = 8000 NGN"
+        },
+        {
+          "name": "iTunes Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/itunes.svg",
+          "rate": "10$ = 8500 NGN"
+        }
+      ]
+    },
+    {
+      "country": "India",
+      "gift_cards": [
+        {
+          "name": "Amazon IN Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/amazon.svg",
+          "rate": "10$ = 800 INR"
+        },
+        {
+          "name": "Google Play IN Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/google-play.svg",
+          "rate": "10$ = 700 INR"
+        }
+      ]
+    },
+    {
+      "country": "Mexico",
+      "gift_cards": [
+        {
+          "name": "Amazon MX Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/amazon.svg",
+          "rate": "10$ = 150 MXN"
+        },
+        {
+          "name": "iTunes MX Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/itunes.svg",
+          "rate": "10$ = 160 MXN"
+        }
+      ]
+    },
+    {
+      "country": "Brazil",
+      "gift_cards": [
+        {
+          "name": "Amazon BR Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/amazon.svg",
+          "rate": "10$ = 45 BRL"
+        },
+        {
+          "name": "Spotify Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/spotify.svg",
+          "rate": "10$ = 50 BRL"
+        }
+      ]
+    },
+    {
+      "country": "Japan",
+      "gift_cards": [
+        {
+          "name": "Amazon JP Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/amazon.svg",
+          "rate": "10$ = 1300 JPY"
+        },
+        {
+          "name": "PlayStation JP Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/playstation.svg",
+          "rate": "10$ = 1200 JPY"
+        }
+      ]
+    },
+    {
+      "country": "South Africa",
+      "gift_cards": [
+        {
+          "name": "Amazon Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/amazon.svg",
+          "rate": "10$ = 150 ZAR"
+        },
+        {
+          "name": "Google Play SA Gift Card",
+          "icon": "https://cdn.jsdelivr.net/gh/feathericons/feather@4.28.0/dist/icons/google-play.svg",
+          "rate": "10$ = 160 ZAR"
+        }
+      ]
+    }
+  ]
+}
