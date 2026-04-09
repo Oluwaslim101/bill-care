@@ -62,12 +62,19 @@ $networkCode = $networkMap[$network];
  *  DATABASE CONNECTION
  *******************************/
 try {
+    $host     = getenv('DB_HOST') ?: 'mainline.proxy.rlwy.net';
+    $port     = getenv('DB_PORT') ?: 14373;
+    $dbname   = getenv('DB_NAME') ?: 'railway';
+    $username = getenv('DB_USER') ?: 'root';
+    $password = getenv('DB_PASS') ?: 'FeZDtcpXMciupbsCJrGLisMfByoHxGJS';
+
     $pdo = new PDO(
-        "mysql:host=localhost;dbname=u822915062_billpay",
-        "u822915062_billpay",
-        "Lotanna@2024",
+        "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4",
+        $username,
+        $password,
         [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
     );
+
 } catch (PDOException $e) {
     error_log("DB ERROR: " . $e->getMessage());
     echo json_encode(['error' => 'Database connection failed']);
