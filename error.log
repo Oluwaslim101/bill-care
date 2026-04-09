@@ -1,0 +1,29 @@
+[10-Dec-2025 17:44:22 UTC] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'u822915062_dthehub_utilit'@'localhost' (using password: YES) in /home/u644492075/domains/digishubb.com/public_html/apps/airtime_handler.php:44
+Stack trace:
+#0 /home/u644492075/domains/digishubb.com/public_html/apps/airtime_handler.php(44): PDO->__construct()
+#1 {main}
+  thrown in /home/u644492075/domains/digishubb.com/public_html/apps/airtime_handler.php on line 44
+[10-Dec-2025 17:55:00 UTC] NELLO RESPONSE: {"status":"AUTHENTICATION_FAILED_1"}
+[10-Dec-2025 17:58:43 UTC] NELLO RESPONSE: {"orderid":"6700967631","statuscode":"100","status":"ORDER_RECEIVED","productname":"100 Credit","amount":"96.5","mobilenetwork":"MTN","mobilenumber":"07076690090","walletbalance":"1430.18469238281"}
+[10-Dec-2025 18:03:02 UTC] NELLO RESPONSE: {"orderid":"6700967886","statuscode":"100","status":"ORDER_RECEIVED","productname":"100 Credit","amount":"96.5","mobilenetwork":"MTN","mobilenumber":"07076690090","walletbalance":"1333.18469238281"}
+[10-Dec-2025 18:05:53 UTC] NELLO RESPONSE: {"orderid":"6700968356","statuscode":"100","status":"ORDER_RECEIVED","productname":"200 Credit","amount":"193","mobilenetwork":"MTN","mobilenumber":"07076690090","walletbalance":"1139.68469238281"}
+[11-Dec-2025 12:08:43 UTC] NELLO RESPONSE: {"orderid":"6701003618","statuscode":"100","status":"ORDER_RECEIVED","productname":"100 Credit","amount":"96.5","mobilenetwork":"MTN","mobilenumber":"07076690090","walletbalance":"848.184692382813"}
+[24-Dec-2025 03:54:01 UTC] NELLO RESPONSE: {"orderid":"6701640807","statuscode":"100","status":"ORDER_RECEIVED","productname":"100 Credit","amount":"96.5","mobilenetwork":"MTN","mobilenumber":"07076690090","walletbalance":"751.184692382813"}
+[25-Dec-2025 13:40:10 UTC] NELLO RESPONSE: {"orderid":"6701721757","statuscode":"100","status":"ORDER_RECEIVED","productname":"100 Credit","amount":"96.5","mobilenetwork":"MTN","mobilenumber":"07076690090","walletbalance":"557.184692382813"}
+[15-Jan-2026 11:01:56 UTC] NELLO RESPONSE: {"status":"AUTHENTICATION_FAILED_1"}
+[15-Jan-2026 11:09:22 UTC] NELLO RESPONSE: {"status":"AUTHENTICATION_FAILED_1"}
+[15-Jan-2026 11:13:51 UTC] NELLO RESPONSE: {"status":"AUTHENTICATION_FAILED_1"}
+[15-Jan-2026 11:16:35 UTC] NELLO RESPONSE: {"orderid":"6703931784","statuscode":"100","status":"ORDER_RECEIVED","productname":"200 Credit","amount":"193","mobilenetwork":"MTN","mobilenumber":"08148622359","walletbalance":"1260.3046875"}
+[15-Jan-2026 11:18:26 UTC] NELLO RESPONSE: {"orderid":"6703933108","statuscode":"100","status":"ORDER_RECEIVED","productname":"100 Credit","amount":"96.5","mobilenetwork":"MTN","mobilenumber":"08148622359","walletbalance":"1162.8046875"}
+[15-Jan-2026 12:53:53 UTC] NELLO RESPONSE: {"orderid":"6704002141","statuscode":"100","status":"ORDER_RECEIVED","productname":"100 Credit","amount":"96.5","mobilenetwork":"MTN","mobilenumber":"08148622359","walletbalance":"968.8046875"}
+[15-Jan-2026 23:50:24 UTC] NELLO RESPONSE: {"orderid":"6704137516","statuscode":"100","status":"ORDER_RECEIVED","productname":"200 Credit","amount":"193","mobilenetwork":"MTN","mobilenumber":"08148622359","walletbalance":"775.3046875"}
+[16-Jan-2026 04:00:57 UTC] NELLO RESPONSE: {"status":"INSUFFICIENT_BALANCE"}
+[16-Jan-2026 04:01:22 UTC] NELLO RESPONSE: {"status":"INSUFFICIENT_BALANCE"}
+[16-Jan-2026 04:01:40 UTC] NELLO RESPONSE: {"orderid":"6704141739","statuscode":"100","status":"ORDER_RECEIVED","productname":"700 Credit","amount":"675.5","mobilenetwork":"MTN","mobilenumber":"08148622359","walletbalance":"98.8046875"}
+[24-Jan-2026 15:55:05 UTC] NELLO RESPONSE: {"status":"INSUFFICIENT_BALANCE"}
+[24-Jan-2026 15:55:31 UTC] NELLO RESPONSE: {"orderid":"6704730137","statuscode":"100","status":"ORDER_RECEIVED","productname":"50 Credit","amount":"48.25","mobilenetwork":"MTN","mobilenumber":"07076690090","walletbalance":"47.0546875"}
+[26-Jan-2026 10:10:08 UTC] NELLO RESPONSE: {"status":"INSUFFICIENT_BALANCE"}
+[26-Jan-2026 10:57:39 UTC] NELLO RESPONSE: {"orderid":"6704818953","statuscode":"100","status":"ORDER_RECEIVED","productname":"100 Credit","amount":"96.5","mobilenetwork":"MTN","mobilenumber":"08148622359","walletbalance":"447.614685058594"}
+[29-Jan-2026 14:36:09 UTC] NELLO RESPONSE: {"orderid":"6705019992","statuscode":"100","status":"ORDER_RECEIVED","productname":"50 Credit","amount":"48.25","mobilenetwork":"MTN","mobilenumber":"08148622359","walletbalance":"107.864685058594"}
+[29-Jan-2026 16:30:05 UTC] NELLO RESPONSE: {"status":"INSUFFICIENT_BALANCE"}
+[29-Jan-2026 16:43:03 UTC] NELLO RESPONSE: {"status":"INSUFFICIENT_BALANCE"}

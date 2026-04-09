@@ -1,0 +1,80 @@
+Array
+(
+    [status] => success
+    [message] => Transfer Queued Successfully
+    [data] => Array
+        (
+            [id] => 97411874
+            [account_number] => 1100723415
+            [bank_code] => 120001
+            [full_name] => THEO NWOGU
+            [created_at] => 2025-04-29T13:04:55.000Z
+            [currency] => NGN
+            [debit_currency] => NGN
+            [amount] => 100
+            [fee] => 10
+            [status] => NEW
+            [reference] => f7061a08f1c27247
+            [meta] => Array
+                (
+                    [0] => Array
+                        (
+                            [BeneficiaryCountry] => NG
+                            [AccountNumber] => 1100723415
+                            [FirstName] => THEO
+                            [LastName] => NWOGU
+                            [BankName] => 9 Payment Service Bank
+                            [RoutingNumber] => 120001
+                            [BeneficiaryName] => THEO NWOGU
+                        )
+
+                )
+
+            [narration] => Frgg
+            [complete_message] => 
+            [requires_approval] => 0
+            [is_approved] => 1
+            [bank_name] => 9 Payment Service Bank
+        )
+
+)
+Array
+(
+    [status] => success
+    [message] => Transfer Queued Successfully
+    [data] => Array
+        (
+            [id] => 97417731
+            [account_number] => 1100723415
+            [bank_code] => 120001
+            [full_name] => THEO NWOGU
+            [created_at] => 2025-04-29T14:59:08.000Z
+            [currency] => NGN
+            [debit_currency] => NGN
+            [amount] => 100
+            [fee] => 10
+            [status] => NEW
+            [reference] => ec1f4ae9cfdaeaac
+            [meta] => Array
+                (
+                    [0] => Array
+                        (
+                            [BeneficiaryCountry] => NG
+                            [AccountNumber] => 1100723415
+                            [FirstName] => THEO
+                            [LastName] => NWOGU
+                            [BankName] => 9 Payment Service Bank
+                            [RoutingNumber] => 120001
+                            [BeneficiaryName] => THEO NWOGU
+                        )
+
+                )
+
+            [narration] => Frgg
+            [complete_message] => 
+            [requires_approval] => 0
+            [is_approved] => 1
+            [bank_name] => 9 Payment Service Bank
+        )
+
+)
